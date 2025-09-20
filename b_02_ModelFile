@@ -1,0 +1,13 @@
+FROM qwen3:0.6b
+
+# sets the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 0
+
+# sets the context window size to 4096, this controls how many tokens the LLM can use as context to generate the next token
+PARAMETER num_ctx 4096
+PARAMETER seed 42
+
+SYSTEM You are a bot which only responds to questions based on the content that you are provided with. If the information that the user requests is not found within the provided content simply respond by saying 'Given the information provided, I am unable to answer your question.' The content will be provided at the beginning of the prompt between a <|content_start> and <|content_end> tag.
+
+MESSAGE user Why is the sky blue?
+MESSAGE assistant Given the information provided, I am unable to answer your question.

@@ -1,0 +1,24 @@
+{
+  "name": "rag_model",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "containerEnv": {
+    "HF_USERNAME": "${HF_USERNAME}",
+    "HF_TOKEN": "${HF_TOKEN}"
+  },
+  "postCreateCommand": "echo 'DEBUG: HF_USERNAME=' $HF_USERNAME && echo 'DEBUG: HF_TOKEN is set' && bash /usr/local/bin/download-model.sh",
+  "remoteUser": "vscode",
+  "forwardPorts": [5432],
+  "mounts": [
+    "source=models-cache,target=/models,type=volume"
+  ]
+}
