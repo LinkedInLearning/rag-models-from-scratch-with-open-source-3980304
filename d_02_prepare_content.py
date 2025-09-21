@@ -1,6 +1,6 @@
 import sys
 import gc
-from c_04_database_connect_embeddings import get_psql_session, TextEmbedding
+from c_03_database_connect_embeddings import get_psql_session, TextEmbedding
 from c_05_pull_db_content import search_embeddings, get_surrounding_sentences
 from sentence_transformers import SentenceTransformer
 

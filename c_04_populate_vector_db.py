@@ -1,7 +1,7 @@
 import os
 from ollama import embed
 from nltk.tokenize import sent_tokenize
-from c_04_database_connect_embeddings import get_psql_session, TextEmbedding
+from c_03_database_connect_embeddings import get_psql_session, TextEmbedding
 from sentence_transformers import SentenceTransformer
 
 # import nltk

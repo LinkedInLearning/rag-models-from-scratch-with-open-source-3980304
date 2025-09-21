@@ -1,4 +1,4 @@
-from c_04_database_connect_embeddings import get_psql_session, TextEmbedding
+from c_03_database_connect_embeddings import get_psql_session, TextEmbedding
 from sentence_transformers import SentenceTransformer
 
 query = "Tell me about human rights in Germany."
